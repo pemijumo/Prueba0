@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "mx.cenet.hotelApp"
-        version     = "1.0.0"
-        versionCode = "1" >       
+<widget xmlns = "http://www.w3.org/ns/widgets"
 
-        <!-- versionCode is optional and Android only -->
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "mx.cenet.Contacto"
+    version     = "1.0.0"
+    versionCode = "1" >
 
-        <preference name="phonegap-version" value="3.7.0" />
+  <!-- versionCode is optional and Android only -->
 
-        <name>Prueba0</name>
+  <preference name="phonegap-version" value="3.7.0" />
 
-        <description>
-            Prueba app
-        </description>
+  <name>Contactos</name>
 
-        <author href="http://yoursite.com" email="you@youremail.com">
-            pp
-        </author>
+  <description>
+    Aplicación de prueba para contactos y archivos
+  </description>
 
-      <gap:plugin name="org.apache.cordova.dialogs" />
-      <!--<gap:plugin name="org.apache.cordova.media-capture" />-->
-      <!--<gap:plugin name="org.apache.cordova.file-transfer" />-->
-      <!--<gap:plugin name="org.apache.cordova.vibration" />-->
-      <!--<gap:plugin name="org.apache.cordova.device" />-->
-      <!--<gap:plugin name="org.apache.cordova.network-information" />-->
-    </widget>
+  <author href="http://igitsoft.com" email="info@igitsoft.com">
+    Carlos Celma
+  </author>
+
+  <icon src="img/icon.png" />
+
+  <gap:plugin name="org.apache.cordova.contacts" />
+  <gap:plugin name="org.apache.cordova.file" />
+
+</widget>
