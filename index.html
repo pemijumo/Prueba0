@@ -1,105 +1,34 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>HalcoNET App</title>
+	<title>Mapa App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    	
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />   
     
-    <link rel="stylesheet" href="css/APP.css" />
+    <!--<link rel="stylesheet" href="css/APP.css" />-->
+    <link rel="stylesheet" href="css/cs1.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>-->
     <!--<script src="js/jquery.snow.min.1.0.js"></script>-->
-    <script type="text/javascript" src="phonegap.js"></script>
+    <!--<script type="text/javascript" src="phonegap.js"></script>-->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
     
 </head>
 <body>
-    <div data-role="header" data-position="inline" data-theme="P"> 
-        <!--<a href="index.html" data-icon="arrow-l">&nbsp;</a>-->
-	    <h1>Cálculo de Utilidad</h1>
-	   <!-- <a href="index.html" data-icon="gear" class="ui-btn-right">-</a>-->
-    </div>
-
-    
-    <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-collapsed="false" data-theme="b">
-        <legend>Buscar</legend>
-        <label for="textinput-f">Artículo:</label>           
-        <div id="FilaGrid" class="ui-grid-b">
-            <div id="CeldaCode" class="ui-block-a">
-                <input type="text" data-clear-btn="true" data-clear-btn="true" name="txtItemCode" id="txtItemCode" placeholder="Código"/>
-            </div>
-            <div id ="EspBtns" class="ui-block-b"></div>            
-            <div id ="btnsArt" class="ui-block-c">
-                <a href="index.html" data-role="button" data-icon="search" title="Buscar" data-inline="true" data-iconpos="notext" id="btnBusqArt">Buscar</a>           
-                <a href="index.html" data-role="button" data-icon="home" title="Limpiar" data-inline="true" data-iconpos="notext" id="btnLimpArt">Limpiar</a>  
-            </div>
-        </div>
-            
-        <label id="sDescripcionArticulo" ></label>   
+    <div data-role="page" id="map-page" data-url="map-page">
+        <div data-role="header" data-theme="a">
+            <h1>Maps</h1>
+        </div>
+        
+        <div role="main" class="ui-content" id="map-canvas">
+        <!-- map loads here... -->
+        </div>
     </div>
     
-    <!--CUERPO DE INFORMACION-->
-    <div id="idInformacion" style="display: none;">
-        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-theme="b">
-            <legend>Cálculo de Utilidad</legend>                
-            <label>Pesos
-                <input id="rbtPesos" name="R1" title="Pesos" type="radio" checked="checked" value="V1" />         
-            </label>           
-            
-            <label>Dolares 
-                <input id="rbtDolares" name="R1" title="Dolares" type="radio" value="V1" /> 
-            </label>
-        
-            <div  data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-collapsed="false">
-                <label for="textinput-5">Precio ($):
-                    <input type="number" data-clear-btn="true" name="txtPrecio" id="txtPrecio" data-mini="true"/>
-                    <input id="btnAplicPrecio" type="button" value="Calcular Utilidad" />
-                </label>
-
-                <label for="textinput-5">
-                    Utilidad (%):
-                    <input type="number" data-clear-btn="true" name="txtUtilidad" id="txtUtilidad" data-mini="true"/>
-                </label>
-                    <input id="btnAplicUtilidad" type="button" value="Calcular Precio" />
-            </div>
-        </div>
-    
-        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-theme="b">
-            <legend>Listas de precios</legend>         
-            <table data-role="table" id="tblLista0" data-mode="columntoggle" data-column-btn-text="" data-column-btn-theme="a" class="phone-compare ui-shadow table-stroke" >
-                <thead>
-                    <tr>
-                        <th class="label">Lista de Precios</th>
-                        <th>MXP</th>
-                        <th>USD</th>
-                    </tr>
-                </thead>
-            </table>
-            <table data-role="table" id="tblLista" data-mode="columntoggle" data-column-btn-text="" data-column-btn-theme="a" class="phone-compare ui-shadow table-stroke">            
-            </table>
-
-        </div>
-
-        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-theme="b">
-            <legend>Stocks</legend>
-            <table data-role="table" id="tblListaStock0" data-mode="columntoggle" data-column-btn-text="" data-column-btn-theme="a" class="phone-compare ui-shadow table-stroke" >
-                <thead>
-                    <tr>
-                        <th class="col-stock">Almacén</th>
-                        <th class="col-stock">Stock</th>
-                        <th class="col-stock">Solicitado</th>
-                    </tr>
-                </thead>
-            </table>
-            <table data-role="table" id="tblListaStock" data-mode="columntoggle" data-column-btn-text="" data-column-btn-theme="a" class="phone-compare ui-shadow table-stroke">
-            </table>
-        </div>
-
-    </div>
-    
-    <script type="text/javascript" src="js/Jactions.js"></script>   
+    <script type="text/javascript" src="js/Js1.js"></script>   
     <!--<script src="js/API/mediaCapture.js"></script>-->
     <!--<script src="js/API/fileTransfer.js"></script-->
 	<!--<script src="js/API/device.js"></script>-->
